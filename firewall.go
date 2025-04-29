@@ -21,8 +21,9 @@ type Firewall struct {
 
 func (Firewall) CaddyModule() caddy.ModuleInfo {
 	return caddy.ModuleInfo{
-		ID:  "http.handlers.firewall",
-		New: func() caddy.Module { return new(Firewall) },
+		ID:                "http.handlers.firewall",
+		New:               func() caddy.Module { return new(Firewall) },
+		CaddyfileDirective: "firewall",
 	}
 }
 
